@@ -177,7 +177,11 @@ class GetCRMContactsApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [
+                'body' => $response->getBody(),
+                'code' => $statusCode,
+                'headers' => $response->getHeaders
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
