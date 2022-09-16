@@ -184,7 +184,7 @@ class UpdateCRMContactApi
             return [
                 'body' => $response->getBody(),
                 'code' => $statusCode,
-                'headers' => $response->getHeaders
+                'headers' => $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -233,7 +233,11 @@ class UpdateCRMContactApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [
+                        'body' => $response->getBody(),
+                        'code' => $response->getStatusCode(),
+                        'headers' => $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
