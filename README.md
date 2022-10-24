@@ -55,34 +55,35 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\AddCRMContactApi(
+$apiInstance = new OpenAPI\Client\Api\CRMContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$crm_id = 'crm_id_example'; // string | CRM ID
-$body = array('key' => new \stdClass); // object
+$crm_id = 'crm_id_example'; // string
+$contact_id = 'contact_id_example'; // string
 
 try {
-    $apiInstance->crmCrmIdContactPost($crm_id, $body);
+    $apiInstance->crmCrmIdContactContactIdDelete($crm_id, $contact_id);
 } catch (Exception $e) {
-    echo 'Exception when calling AddCRMContactApi->crmCrmIdContactPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CRMContactApi->crmCrmIdContactContactIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to *https://api-bssserver29.cloud.conpeek.com*
+All URIs are relative to *http://}*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AddCRMContactApi* | [**crmCrmIdContactPost**](docs/Api/AddCRMContactApi.md#crmcrmidcontactpost) | **POST** /crm/{crm_id}/contact | 
-*DeleteCRMContactApi* | [**crmCrmIdContactContactIdDelete**](docs/Api/DeleteCRMContactApi.md#crmcrmidcontactcontactiddelete) | **DELETE** /crm/{crm_id}/contact/{contact_id} | 
-*GetCRMContactApi* | [**crmCrmIdContactContactIdGet**](docs/Api/GetCRMContactApi.md#crmcrmidcontactcontactidget) | **GET** /crm/{crm_id}/contact/{contact_id} | 
-*GetCRMContactsApi* | [**crmCrmIdContactGet**](docs/Api/GetCRMContactsApi.md#crmcrmidcontactget) | **GET** /crm/{crm_id}/contact | 
-*UpdateCRMContactApi* | [**crmCrmIdContactContactIdPut**](docs/Api/UpdateCRMContactApi.md#crmcrmidcontactcontactidput) | **PUT** /crm/{crm_id}/contact/{contact_id} | 
+*CRMContactApi* | [**crmCrmIdContactContactIdDelete**](docs/Api/CRMContactApi.md#crmcrmidcontactcontactiddelete) | **DELETE** /crm/{crm_id}/contact/{contact_id} | DELETE CRM contact
+*CRMContactApi* | [**crmCrmIdContactContactIdGet**](docs/Api/CRMContactApi.md#crmcrmidcontactcontactidget) | **GET** /crm/{crm_id}/contact/{contact_id} | Get CRM contact
+*CRMContactApi* | [**crmCrmIdContactContactIdPut**](docs/Api/CRMContactApi.md#crmcrmidcontactcontactidput) | **PUT** /crm/{crm_id}/contact/{contact_id} | Update CRM contact
+*CRMContactApi* | [**crmCrmIdContactGet**](docs/Api/CRMContactApi.md#crmcrmidcontactget) | **GET** /crm/{crm_id}/contact | Get CRM contacts
+*CRMContactApi* | [**crmCrmIdContactPost**](docs/Api/CRMContactApi.md#crmcrmidcontactpost) | **POST** /crm/{crm_id}/contact | Add CRM contact
+*VoiceCampaignRequestApi* | [**voiceCampaignVoiceCampaignIdRequestPost**](docs/Api/VoiceCampaignRequestApi.md#voicecampaignvoicecampaignidrequestpost) | **POST** /voice_campaign/{voice_campaign_id}/request | Add Voice Campaign Request
 
 ## Models
 

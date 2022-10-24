@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "4d7274af-cae7-43c4-b54a-5c5a36d57b21",
+		"name": "Conpeek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19204566"
+	},
+	"item": [
+		{
+			"name": "CRM Contact",
+			"item": [
+				{
+					"name": "Get CRM contacts",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/crm/{{crm_id}}/contact",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"crm",
+								"{{crm_id}}",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CRM contact",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/crm/{{crm_id}}/contact/{{contact_id}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"crm",
+								"{{crm_id}}",
+								"contact",
+								"{{contact_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update CRM contact",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":  {\n        \"firstname\": \"{{contact_firstname}}\",\n        \"surname\": \"{{contact_surename}}\",\n        \"custom\": {\n            \"usuniety\": {{contact_custom_usuniety}}\n        },\n        \"email\": \"{{contact_email}}\",\n        \"website\": \"{{contact_website}}\",\n        \"number_list\": [\n            {\n                \"type\": \"{{contact_number_list_type}}\",\n                \"number\": \"{{contact_number_list_number}}\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/crm/{{crm_id}}/contact/{{contact_id}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"crm",
+								"{{crm_id}}",
+								"contact",
+								"{{contact_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add CRM contact",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":  {\n        \"firstname\": \"{{contact_firstname}}\",\n        \"surname\": \"{{contact_surename}}\",\n        \"custom\": {\n            \"usuniety\": {{contact_custom_usuniety}}\n        },\n        \"email\": \"{{contact_email}}\",\n        \"website\": \"{{contact_website}}\",\n        \"number_list\": [\n            {\n                \"type\": \"{{contact_number_list_type}}\",\n                \"number\": \"{{contact_number_list_number}}\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/crm/{{crm_id}}/contact",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"crm",
+								"{{crm_id}}",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CRM contact",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/crm/{{crm_id}}/contact/{{contact_id}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"crm",
+								"{{crm_id}}",
+								"contact",
+								"{{contact_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Voice Campaign Request",
+			"item": [
+				{
+					"name": "Add Voice Campaign Request",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"name\": \"{{contact_firstname}} {{contact_surename}} {{add_voice_campaign_name}}\",\n        \"contact_number\": \"{{add_voice_campaign_phone}}\",\n        \"contact_identifier\": \"{{contact_id}}\",\n        \"note\": \"hwoj foeijf weoif weoij weoijfweoi j\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/voice_campaign/{{voice_campaign_id}}/request",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"voice_campaign",
+								"{{voice_campaign_id}}",
+								"request"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,197 @@
+openapi: 3.0.0
+info:
+  title: Conpeek
+  version: 1.0.0
+servers:
+  - url: http://{{api_url}}
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: CRM Contact
+  - name: Voice Campaign Request
+paths:
+  /crm/{crm_id}/contact:
+    get:
+      tags:
+        - CRM Contact
+      summary: Get CRM contacts
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: crm_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - CRM Contact
+      summary: Add CRM contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: |-
+                {
+                    "data":  {
+                        "firstname": "{{contact_firstname}}",
+                        "surname": "{{contact_surename}}",
+                        "custom": {
+                            "usuniety": {{contact_custom_usuniety}}
+                        },
+                        "email": "{{contact_email}}",
+                        "website": "{{contact_website}}",
+                        "number_list": [
+                            {
+                                "type": "{{contact_number_list_type}}",
+                                "number": "{{contact_number_list_number}}"
+                            }
+                        ]
+                    }
+                }
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: crm_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /crm/{crm_id}/contact/{contact_id}:
+    get:
+      tags:
+        - CRM Contact
+      summary: Get CRM contact
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: crm_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: contact_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - CRM Contact
+      summary: Update CRM contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: |-
+                {
+                    "data":  {
+                        "firstname": "{{contact_firstname}}",
+                        "surname": "{{contact_surename}}",
+                        "custom": {
+                            "usuniety": {{contact_custom_usuniety}}
+                        },
+                        "email": "{{contact_email}}",
+                        "website": "{{contact_website}}",
+                        "number_list": [
+                            {
+                                "type": "{{contact_number_list_type}}",
+                                "number": "{{contact_number_list_number}}"
+                            }
+                        ]
+                    }
+                }
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: crm_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: contact_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - CRM Contact
+      summary: DELETE CRM contact
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: crm_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: contact_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /voice_campaign/{voice_campaign_id}/request:
+    post:
+      tags:
+        - Voice Campaign Request
+      summary: Add Voice Campaign Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                data:
+                  name: >-
+                    {{contact_firstname}} {{contact_surename}}
+                    {{add_voice_campaign_name}}
+                  contact_number: '{{add_voice_campaign_phone}}'
+                  contact_identifier: '{{contact_id}}'
+                  note: hwoj foeijf weoif weoij weoijfweoi j
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: voice_campaign_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
