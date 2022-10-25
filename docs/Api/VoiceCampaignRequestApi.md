@@ -1,19 +1,19 @@
-# OpenAPI\Client\AddCRMContactApi
+# OpenAPI\Client\VoiceCampaignRequestApi
 
-All URIs are relative to https://api-bssserver29.cloud.conpeek.com.
+All URIs are relative to http://}, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**crmCrmIdContactPost()**](AddCRMContactApi.md#crmCrmIdContactPost) | **POST** /crm/{crm_id}/contact | 
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**voiceCampaignVoiceCampaignIdRequestPost()**](VoiceCampaignRequestApi.md#voiceCampaignVoiceCampaignIdRequestPost) | **POST** /voice_campaign/{voice_campaign_id}/request | Add Voice Campaign Request |
 
 
-## `crmCrmIdContactPost()`
+## `voiceCampaignVoiceCampaignIdRequestPost()`
 
 ```php
-crmCrmIdContactPost($crm_id, $body)
+voiceCampaignVoiceCampaignIdRequestPost($voice_campaign_id, $body)
 ```
 
-
+Add Voice Campaign Request
 
 ### Example
 
@@ -28,28 +28,28 @@ $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Au
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\AddCRMContactApi(
+$apiInstance = new OpenAPI\Client\Api\VoiceCampaignRequestApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$crm_id = 'crm_id_example'; // string | CRM ID
+$voice_campaign_id = 'voice_campaign_id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $apiInstance->crmCrmIdContactPost($crm_id, $body);
+    $apiInstance->voiceCampaignVoiceCampaignIdRequestPost($voice_campaign_id, $body);
 } catch (Exception $e) {
-    echo 'Exception when calling AddCRMContactApi->crmCrmIdContactPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling VoiceCampaignRequestApi->voiceCampaignVoiceCampaignIdRequestPost: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **crm_id** | **string**| CRM ID |
- **body** | **object**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **voice_campaign_id** | **string**|  | |
+| **body** | **object**|  | [optional] |
 
 ### Return type
 
