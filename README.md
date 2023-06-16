@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/kmadenski/conpeek-adapter.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "kmadenski/conpeek-adapter": "1.1.0"
   }
 }
 ```
