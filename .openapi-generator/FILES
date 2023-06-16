@@ -1,0 +1,16 @@
+.gitignore
+.php-cs-fixer.dist.php
+.travis.yml
+README.md
+composer.json
+docs/Api/CRMContactApi.md
+docs/Api/VoiceCampaignRequestApi.md
+git_push.sh
+lib/Api/CRMContactApi.php
+lib/Api/VoiceCampaignRequestApi.php
+lib/ApiException.php
+lib/Configuration.php
+lib/HeaderSelector.php
+lib/Model/ModelInterface.php
+lib/ObjectSerializer.php
+phpunit.xml.dist
